@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<bean id="messageWriter" class="com.fa.beans.MessageWriter">
+<property name="messageConverter" ref="htmlMessageConverter"></property>
+</bean>
+
+<bean id="pdfMessageConverter" class="com.fa.beans.PDFMessageConverter">
+</bean>
+
+<bean id="htmlMessageConverter" class="com.fa.beans.HTMLMessagConverter">
+</bean>
+
+</beans>
