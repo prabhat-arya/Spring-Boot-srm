@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- autowire="byName" => Dependent class object is injected in to target 
+		class through setter injection by using Name of the attribute -->
+	<!-- <bean id="robot" class="com.aw.beans.Robot" autowire="byName"/> -->
+
+	<!-- autowire="byType" => Dependent class object is injected in to target 
+		class through setter injection by using class Type of the attribute 
+		=>To solve the ambiguti problem in byType we have to write the autowire-candidate="false" 
+		in one of the bean so that that bean is not paricipate in autowaring... -->
+	<!-- <bean id="robot" class="com.aw.beans.Robot" autowire="byType" /> -->
+
+	<!-- <bean id="chip1" class="com.aw.beans.Chip"
+		autowire-candidate="false">
+		<property name="name" value=" solide selecon chip"></property>
+		<property name="version" value="3.0"></property>
+	</bean>
+	<bean id="chip2" class="com.aw.beans.Chip">
+		<property name="name" value="metal chip"></property>
+		<property name="version" value="3.0"></property>
+	</bean> -->
+
+
+	<!-- autowire="constructor" => Dependent class object is injected in to 
+		target class through constructor injection by using class Type of the attribute -->
+	<bean id="robot" class="com.aw.beans.Robot" autowire="constructor" />
+
+
+	<bean id="chip" class="com.aw.beans.Chip">
+		<property name="name" value="selecon chip"></property>
+		<property name="version" value="1.0"></property>
+	</bean>
+
+
+
+
+</beans>
